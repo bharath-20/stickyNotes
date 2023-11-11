@@ -1,6 +1,6 @@
 # stickyNotes
 Sticky notes
-# <a name="_l9a5qokprd00"></a>ReadME
+# <a name="_l9a5qokprd00"></a>Read ME
 The application is made using NodeJs and ExpressJS.
 
 Steps to setup application in local.
@@ -10,7 +10,7 @@ Steps to setup application in local.
 - From ./stickyNotes in the terminal. Install require dependencies
 - First try npm install to automatically install all the dependencies
 - If it fail manually install the following dependencies
-  - `  `npm install bcrypt body-parser express jsonwebtoken knex nodemon sqlite3 uuid 
+  - npm install bcrypt body-parser express jsonwebtoken knex nodemon sqlite3 uuid 
 - To start the application
   - Use npm start (for automatic run using nodemon)
   - npm dev (for node  server.js)
@@ -20,9 +20,9 @@ Steps to setup application in local.
 - Existed login creds
   - For admin
 
-`		`Email :  <admin@gmail.com>
+		Email :  <admin@gmail.com>
 
-`		`Password : password
+		Password : password
 
 - For sample user
   - Email : <user1@gmail.com>
@@ -36,26 +36,26 @@ This is only the backend endpoints description.
 - ### <a name="_ped2xk27xeo6"></a>Register : */register*
   - {
 
-`    `"name"   : "",
+      "name"   : "",
 
-`    `"email" : "",
+      "email" : "",
 
-`    `"password" : "",
+      "password" : "",
 
-`    `"role" : "USER"  
+      "role" : "USER"  
 
-}
+    }
 
 - Role can be USER/ADMIN
 - Password stored after encryption with bcrypt
 - ### <a name="_z8o96lcysywo"></a>Login : */login*
   - {
 
-`    `"email" : "user4@gmail.com",
+      "email" : "user4@gmail.com",
 
-`    `"password" : "password"
+      "password" : "password"
 
-}
+    }
 
 - Every Time user login a jwt token will be created that need to passed as bearer authentication token and it expires in 1hr
 - Using a token we can know the userId and role for role based changes.
@@ -71,26 +71,26 @@ This is only the backend endpoints description.
 - Post note : */notes*
   - {
 
-`    `"title" : "",
+      "title" : "",
 
-`    `"content" : "",
+      "content" : "",
 
-`    `"visibility" : ""
+      "visibility" : ""
 
-}
+    }
 
 - Irrespective of role the note will be saved basis the userId from token
 - Visibility defines public or private  as o and 1 respectively
 - Update note : */notes/:id*
   - {
 
-`    `"title" : "",
+      "title" : "",
 
-`    `"content" : "",
+      "content" : "",
 
-`    `"visibility" : ""
+      "visibility" : ""
 
-}
+      }
 
 - Note id should be passed in url (Id can be found by get all notes end point)
 - Can update the above params and after update updated\_at date will be updated automatically
