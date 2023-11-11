@@ -31,11 +31,44 @@ Steps to setup application in local.
   - Email : <user1@gmail.com>
   - Password : password
 - The above emails have data associated with it
+## Database description
 
 
+**Users Table:**
+- **Table Name:** users
+- **Columns:**
+  - **id:** Incremental primary key.
+  - **userId:** Unique identifier for the user.
+  - **name:** User's name (not nullable).
+  - **email:** Unique email address for the user (not nullable).
+  - **password:** User's password (not nullable).
+  - **role:** User's role (not nullable).
+- **Description:** This table stores information about users, including their unique identifier, name, email, password, and role.
 
-This is only the backend endpoints description.
+**Note Table:**
+- **Table Name:** Note
+- **Columns:**
+  - **id:** Incremental primary key.
+  - **userId:** Identifier linking the note to a specific user.
+  - **title:** Title of the note.
+  - **content:** Content or body of the note.
+  - **created_at:** Timestamp indicating when the note was created (defaulting to the current time).
+  - **updated_at:** Timestamp indicating when the note was last updated (defaulting to the current time).
+  - **visibility:** Integer indicating the visibility status of the note (defaulting to 0).
+- **Description:** This table is designed to store notes, associating them with a user through userId. It includes information such as title, content, creation and update timestamps, and visibility status.
+
+**Invites Table:**
+- **Table Name:** invites
+- **Columns:**
+  - **id:** Incremental primary key.
+  - **email:** Email address associated with the invite (not nullable).
+  - **token:** Unique token for the invite (not nullable, and also unique).
+  - **timestamps:** Automatically generated timestamps for creation and update times.
+- **Description:** This table is used to manage invites. It includes an email address, a unique token for the invite, and timestamps indicating when the invite was created and last updated.
+
+
 ## <a name="_hn8n5larm5fw"></a>Authentication
+- This is only the backend endpoints description.
 - ### <a name="_ped2xk27xeo6"></a>Register : */register*
   - {
 
