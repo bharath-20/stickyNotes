@@ -6,9 +6,11 @@ const authController = require("./controllers/authController");
 const notesController = require("./controllers/notesController");
 const feedController = require("./controllers/feedController");
 const inviteRoute = require("./routes/invitation");
+const cors = require('cors');
 require('dotenv').config();
 const PORT = process.env.PORT || 3000
- 
+
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
